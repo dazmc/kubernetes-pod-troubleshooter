@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: kubernetes-pod-troubleshooter
+version: 1.0.0
+description: Debug pod failures, analyze logs, and diagnose issues in local Kubernetes clusters
+
+model:
+  preferred: claude-sonnet-4-5-20250929
+  fallback:
+    - gpt-4o-mini
+  constraints:
+    temperature: 0.2
+    max_tokens: 4096
+    top_p: 0.95
+
+runtime:
+  max_turns: 15
+  timeout: 120
+
+skills:
+  - pod-diagnostics
+  - log-analysis
+  - resource-monitoring
