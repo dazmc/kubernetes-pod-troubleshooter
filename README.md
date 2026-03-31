@@ -13,23 +13,23 @@ Debug pod failures, analyze logs, and diagnose issues in local Kubernetes cluste
 ## Run
 
 ```bash
-gitagent run -r https://github.com/<username>/kubernetes-pod-troubleshooter -p "Troubleshoot pod 'nginx' in namespace 'default'"
+npx @open-gitagent/gitagent run -r https://github.com/dazmc/kubernetes-pod-troubleshooter -p "Troubleshoot pod 'nginx' in namespace 'default'"
 ```
 
 ### Example Prompts
 
 ```bash
 # Debug a failing pod
-gitagent run -r ... -p "Why is pod 'api-server' in namespace 'production' crashing?"
+npx @open-gitagent/gitagent run -r https://github.com/dazmc/kubernetes-pod-troubleshooter -p "Why is pod 'api-server' in namespace 'production' crashing?"
 
 # Diagnose resource issues
-gitagent run -r ... -p "Pod 'worker' is NotReady. Check logs and resource limits."
+npx @open-gitagent/gitagent run -r https://github.com/dazmc/kubernetes-pod-troubleshooter -p "Pod 'worker' is NotReady. Check logs and resource limits."
 
 # Analyze multiple pods
-gitagent run -r ... -p "List all pods in 'kube-system' and report any that are failing."
+npx @open-gitagent/gitagent run -r https://github.com/dazmc/kubernetes-pod-troubleshooter -p "List all pods in 'kube-system' and report any that are failing."
 
 # Investigate pending pod
-gitagent run -r ... -p "Why is pod 'data-loader' still Pending?"
+npx @open-gitagent/gitagent run -r https://github.com/dazmc/kubernetes-pod-troubleshooter -p "Why is pod 'data-loader' still Pending?"
 ```
 
 ## What It Can Do
@@ -123,8 +123,8 @@ gitagent run -d . -p "List all pods in 'default' namespace"
 
 ## Next Steps
 
-- Ready to push to GitHub? Run: `gh repo create kubernetes-pod-troubleshooter --public --source=. --push`
-- Want to register on the gitagent registry? After pushing: `gitagent registry -r <repo-url> -c developer-tools -a opencode,openai`
+- Want to register on the gitagent registry? Run: `gitagent registry -r https://github.com/dazmc/kubernetes-pod-troubleshooter -c developer-tools -a opencode,openai`
+- This makes it discoverable on [registry.gitagent.sh](https://registry.gitagent.sh) for the community
 
 ---
 
